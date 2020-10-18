@@ -45,4 +45,13 @@ public class Vector2 {
     public int hashCode() {
         return Float.hashCode(x * y + x + y);
     }
+
+    public float sqDistance(Vector2 other) {
+        return (x * x + other.x * other.x) +
+                (y * y + other.y * other.y);
+    }
+
+    public float distance(Vector2 other) {
+        return (float)Math.sqrt(sqDistance(other));
+    }
 }

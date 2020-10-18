@@ -1,6 +1,5 @@
 package citygen;
 
-public class Lot
-{
+public class Lot {
 }
 

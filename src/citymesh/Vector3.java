@@ -52,4 +52,18 @@ public class Vector3 {
     public int hashCode() {
         return Float.hashCode(x * y * z + x * y + y * z + x + y + z);
     }
+
+    public Vector3 add(Vector3 other) {
+        return new Vector3(x + other.x, y + other.y, z + other.z);
+    }
+
+    public float sqDistance(Vector3 other) {
+        return (x * x + other.x * other.x) +
+                (y * y + other.y * other.y) +
+                (z * z + other.z * other.z);
+    }
+
+    public float distance(Vector3 other) {
+        return (float)Math.sqrt(sqDistance(other));
+    }
 }
