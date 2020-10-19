@@ -5,6 +5,8 @@ package citymesh;
  */
 public class Vector2 {
 
+    public static final Vector2 ORIGIN = new Vector2(0, 0);
+
     // Coords
     private float x, y;
 
@@ -53,5 +55,11 @@ public class Vector2 {
 
     public float distance(Vector2 other) {
         return (float)Math.sqrt(sqDistance(other));
+    }
+
+    public Vector2 normalized() {
+        float len = distance(ORIGIN);
+        if (len == 0) return ORIGIN; // don't divide by 0
+        return new Vector2(x / len, y / len);
     }
 }

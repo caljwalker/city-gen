@@ -69,14 +69,8 @@ public class ObjExporter implements Exporter {
             System.err.println("Failed to export mesh" + m + "!");
             return false;
         }
-        try {
-            objWriter.println("o " + m.getName());
-            writeMesh(m, objWriter, mtlWriter);
-        } catch (IOException e) {
-            System.out.println("Failed to export mesh" + m + "!");
-            System.err.println("Error writing to file: " + e.getMessage());
-            return false;
-        }
+        objWriter.println("o " + m.getName());
+        writeMesh(m, objWriter, mtlWriter);
         return true;
     }
 
@@ -85,9 +79,8 @@ public class ObjExporter implements Exporter {
      * @param m mesh to export
      * @param obj object writer
      * @param mtl material writer
-     * @throws IOException if error occurs while writing
      */
-    private void writeMesh(Mesh m, PrintStream obj, PrintStream mtl) throws IOException {
+    private void writeMesh(Mesh m, PrintStream obj, PrintStream mtl) {
         // Sort verts by ID, then print them
         Vector3[] sortedVerts = new Vector3[m.vertexCount()];
         for (Map.Entry<Vector3, Integer> vtx : m.verts.entrySet()) {

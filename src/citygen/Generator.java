@@ -13,19 +13,19 @@ public class Generator {
         };
         m.addFace(
             new Vector3[] {
-                new Vector3(-1, -1, -1),
-                new Vector3(1, -1, -1),
+                new Vector3(-1, 1, -1),
                 new Vector3(1, 1, -1),
-                new Vector3(-1, 1, -1)
+                new Vector3(1, -1, -1),
+                new Vector3(-1, -1, -1)
             },
             uvs, 0
         );
         m.addFace(
                 new Vector3[] {
+                        new Vector3(-1, 1, 1)
                         new Vector3(-1, -1, 1),
                         new Vector3(1, -1, 1),
                         new Vector3(1, 1, 1),
-                        new Vector3(-1, 1, 1)
                 },
                 uvs, 0
         );
@@ -35,6 +35,15 @@ public class Generator {
                         new Vector3(1, -1, -1),
                         new Vector3(1, -1, 1),
                         new Vector3(-1, -1, 1)
+                },
+                uvs, 0
+        );
+        m.addFace(
+                new Vector3[] {
+                        new Vector3(-1, 1, 1),
+                        new Vector3(1, 1, 1),
+                        new Vector3(1, 1, -1),
+                        new Vector3(-1, 1, -1)
                 },
                 uvs, 0
         );
